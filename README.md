@@ -112,4 +112,62 @@ DataStructures and Storage Patterns in Solidity
    Yes, but only in internal function calls.
    ```
    
+ - Share Structs across contracts
+ 
+   - https://ethereum.stackexchange.com/questions/27259/how-can-you-share-a-struct-definition-between-contracts-in-separate-files
    
+   You can with a library! Here's an example:
+
+```js
+pragma solidity ^0.4.17;
+
+library SharedStructs {
+    struct Thing {
+        address[] people;
+    }    
+}
+
+contract A {
+    SharedStructs.Thing thing;
+}
+
+contract B {
+    SharedStructs.Thing thing;
+}
+```
+
+- Two important things to keep in mind: 
+   1) the library gets deployed to the chain and then is referenced by its address
+   2) the library acts as a true pass-through, meaning msg.sender (and related values) refer to the original caller.
+   
+If you do not want to use libraries you can create an abstract contract that only contains the structs an inherit from them. It is kinda ugly if the contracts are not quite related.
+
+```js
+contract GeometryShapesData {
+    struct Point {
+        uint x;
+        uint y;
+    }
+}
+
+contract A is GeometryShapesData {
+    mapping (bytes32 => Point) public points;
+    function addPoint(bytes32 idx, uint x, uint y) public { 
+        points[idx] = Point(x, y);
+    }
+    function getPoint(bytes32 idx) constant public returns (uint x, uint y) {
+        return (points[idx].x, points[idx].y);
+    }
+}
+
+contract B is GeometryShapesData {
+    Point[4] public vertexes;
+    function addVertex(uint pos, uint x, uint y) public { 
+        vertexes[pos] = Point(x, y);
+    }
+    function getVertex(uint pos) constant public returns (uint x, uint y) {
+        return (vertexes[pos].x, vertexes[pos].y);
+    }   
+```   
+
+ - More info and details here: http://solidity.readthedocs.io/en/develop/contracts.html#libraries
