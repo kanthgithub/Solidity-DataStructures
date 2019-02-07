@@ -105,3 +105,11 @@ DataStructures and Storage Patterns in Solidity
   - https://medium.com/coinmonks/solidity-tutorial-returning-structs-from-public-functions-e78e48efb378
   
    - Return Struct and Array of Structs in solidity
+
+   - https://solidity.readthedocs.io/en/v0.4.24/frequently-asked-questions.html#can-a-contract-function-return-a-struct
+   
+   ```
+   Yes, but only in internal function calls.
+   ```
+   
+   
