@@ -97,3 +97,11 @@ DataStructures and Storage Patterns in Solidity
         }
     }
     ```
+
+### Structs:
+
+- Solidity tutorial: returning structs from public functions
+
+  - https://medium.com/coinmonks/solidity-tutorial-returning-structs-from-public-functions-e78e48efb378
+  
+   - Return Struct and Array of Structs in solidity
