@@ -12,7 +12,7 @@ DataStructures and Storage Patterns in Solidity
 
     - You can do something like this. Note, for every custom struct you'll have to write custom serialization and deserialization methods.
 
-      ```sol
+      ```js
       pragma solidity ^0.4.0;
 
 contract StructSerialization
