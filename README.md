@@ -171,3 +171,9 @@ contract B is GeometryShapesData {
 ```   
 
  - More info and details here: http://solidity.readthedocs.io/en/develop/contracts.html#libraries
+
+### Read Storage :
+
+ - https://medium.com/aigang-network/how-to-read-ethereum-contract-storage-44252c8af925
+
+  
