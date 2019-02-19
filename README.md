@@ -180,4 +180,5 @@ contract B is GeometryShapesData {
 
   - https://blog.b9lab.com/storage-pointers-in-solidity-7dcfaa536089
   
-  
+  - Declaring a memory-Array of storage pointers:
+    - https://ethereum.stackexchange.com/questions/54521/declaring-a-memory-array-of-storage-pointers-in-solidity
