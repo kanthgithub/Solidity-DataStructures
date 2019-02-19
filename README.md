@@ -176,4 +176,8 @@ contract B is GeometryShapesData {
 
  - https://medium.com/aigang-network/how-to-read-ethereum-contract-storage-44252c8af925
 
+#### Storage-Pointers:
+
+  - https://blog.b9lab.com/storage-pointers-in-solidity-7dcfaa536089
+  
   
