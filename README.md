@@ -182,3 +182,7 @@ contract B is GeometryShapesData {
   
   - Declaring a memory-Array of storage pointers:
     - https://ethereum.stackexchange.com/questions/54521/declaring-a-memory-array-of-storage-pointers-in-solidity
+
+  - Byte variables are connected:
+    - https://ethereum.stackexchange.com/questions/62384/bytes-variables-are-connected/62394#62394
+    
