@@ -185,4 +185,40 @@ contract B is GeometryShapesData {
 
   - Byte variables are connected:
     - https://ethereum.stackexchange.com/questions/62384/bytes-variables-are-connected/62394#62394
-    
+
+#### Bytes32 to String
+
+```
+the first function converts bytes32 to string then passes the result to hashing function. 
+```
+
+
+```js
+function bytes32ToString(bytes32 x) constant returns (string) {
+    bytes memory bytesString = new bytes(32);
+    uint charCount = 0;
+    for (uint j = 0; j < 32; j++) {
+        byte char = byte(bytes32(uint(x) * 2 ** (8 * j)));
+        if (char != 0) {
+            bytesString[charCount] = char;
+            charCount++;
+        }
+    }
+    bytes memory bytesStringTrimmed = new bytes(charCount);
+    for (j = 0; j < charCount; j++) {
+        bytesStringTrimmed[j] = bytesString[j];
+    }
+    return string(bytesStringTrimmed);
+}
+
+ function someFunction(bytes32 _string) returns(bool){
+    bool result = false;
+    bytes32 hashparameter = sha3(bytes32ToString(_string));
+    bytes32 hashstring = sha3("testString");
+    if(hashstring == hashparameter) {
+        result = true;
+    }
+    return result;
+}
+```
+
