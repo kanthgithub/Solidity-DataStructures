@@ -186,6 +186,8 @@ contract B is GeometryShapesData {
   - Byte variables are connected:
     - https://ethereum.stackexchange.com/questions/62384/bytes-variables-are-connected/62394#62394
 
+### Data-Type conversion:
+
 #### Bytes32 to String
 
 ```
